@@ -792,8 +792,8 @@ Ref: https://www.researchgate.net/publication/281968993_Thermally_Activated_Buil
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#BaselineLoadProfile
 :BaselineLoadProfile rdf:type owl:NamedIndividual ,
                               :Variable ;
-                     :hasBEMVariable :Electricity:Facility ,
-                                     :Gas:Facility ;
+                     :hasBEMVariable :ElectricityFacility ,
+                                     :GasFacility ;
                      :isUnderCondition :Baseline .
 
 
