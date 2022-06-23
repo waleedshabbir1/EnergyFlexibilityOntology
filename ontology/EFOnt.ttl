@@ -792,8 +792,6 @@ Ref: https://www.researchgate.net/publication/281968993_Thermally_Activated_Buil
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#BaselineLoadProfile
 :BaselineLoadProfile rdf:type owl:NamedIndividual ,
                               :Variable ;
-                     :hasBEMVariable :ElectricityFacility ,
-                                     :GasFacility ;
                      :isUnderCondition :Baseline .
 
 
@@ -1062,7 +1060,6 @@ http://www.ibpsa.org/proceedings/eSimPapers/2018/1-3-A-2.pdf"""^^xsd:string ;
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#ElectricVehicle
 :ElectricVehicle rdf:type owl:NamedIndividual ,
                           :ElectricityStorage ;
-                 :canBeModeledBy :Exterior:FuelEquipment ;
                  :hasScope :BuildingLevelApplication .
 
 
@@ -1159,7 +1156,6 @@ http://www.ibpsa.org/proceedings/eSimPapers/2018/1-3-A-2.pdf"""^^xsd:string ;
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Flexible
 :Flexible rdf:type owl:NamedIndividual ,
                    :OperationCondition ;
-          :hasBEMVariable :Electricity:Facility ;
           rdfs:label "FlexibleCondition"^^xsd:string ;
           <http://www.w3.org/2004/02/skos/core#definition> "Refers to the condition when building is operated with a energy-flexibile goal."^^xsd:string .
 
@@ -1210,7 +1206,6 @@ http://www.ibpsa.org/proceedings/eSimPapers/2018/1-3-A-2.pdf"""^^xsd:string ;
 :GenericLoadProfile rdf:type owl:NamedIndividual ,
                              :SerialValue ,
                              :Variable ;
-                    :hasBEMVariable :Electricity:Facility ;
                     :isUnderCondition :UnspecifiedCondition ;
                     <http://www.w3.org/2004/02/skos/core#definition> "A time series profile with arbitary type (e.g., energy consumption, peak demand, cost, and GHG emissions) and indefinite temporal resolution."^^xsd:string .
 
@@ -1686,8 +1681,7 @@ https://newbuildings.org/gridoptimal-leed-pilot-credit-encourages-designers-to-h
 
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Photovoltaic
 :Photovoltaic rdf:type owl:NamedIndividual ,
-                       :EnergyGenerator ;
-              :canBeModeledBy :Generator:Photovoltaic .
+                       :EnergyGenerator .
 
 
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#PowerDemandProfile
@@ -2016,8 +2010,7 @@ Applicable when the condition of the measurements (e.g., power demand profile) a
 :lighting_power_reduction rdf:type owl:NamedIndividual ,
                                    :BehavioralLoadShaping ,
                                    :PowerAdjustableSystem ;
-                          :canBeModeledBy :Lights ,
-                                          :Exterior:Lights ;
+                          :canBeModeledBy :Lights ;
                           :hasScope :SystemLevelApplication ;
                           rdfs:label "LightingPowerReduction"@en .
 
@@ -2059,7 +2052,6 @@ Applicable when the condition of the measurements (e.g., power demand profile) a
 :pre_cooling rdf:type owl:NamedIndividual ,
                       :BehavioralLoadShaping ,
                       :ThermallyActivatedBuildingSystem ;
-             :canBeModeledBy :ThermostatSetpoint:DualSetpoint ;
              :hasScope :SystemLevelApplication ;
              rdfs:label "PreCooling"@en .
 
@@ -2068,7 +2060,6 @@ Applicable when the condition of the measurements (e.g., power demand profile) a
 :pre_heating rdf:type owl:NamedIndividual ,
                       :BehavioralLoadShaping ,
                       :ThermallyActivatedBuildingSystem ;
-             :canBeModeledBy :ThermostatSetpoint:DualSetpoint ;
              :hasScope :SystemLevelApplication ;
              rdfs:label "PreHeating"@en .
 
@@ -2143,7 +2134,6 @@ Applicable when the condition of the measurements (e.g., power demand profile) a
 :temperature_setpoint_adjustment rdf:type owl:NamedIndividual ,
                                           :BehavioralLoadShaping ,
                                           :ThermallyActivatedBuildingSystem ;
-                                 :canBeModeledBy :ThermostatSetpoint:DualSetpoint ;
                                  :hasScope :SystemLevelApplication ;
                                  rdfs:label "TemperatureSetpointAdjustment"@en .
 
@@ -2187,99 +2177,6 @@ Applicable when the condition of the measurements (e.g., power demand profile) a
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#$/kWh
 <http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#$/kWh> rdf:type owl:NamedIndividual ,
                                                                             :UnitOfMeasure .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Cooling:Electricity
-:Cooling:Electricity rdf:type owl:NamedIndividual ,
-                              :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Electricity:Facility
-:Electricity:Facility rdf:type owl:NamedIndividual ,
-                               :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Electricity:HVAC
-:Electricity:HVAC rdf:type owl:NamedIndividual ,
-                           :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#ElectricityProduced:Facility
-:ElectricityProduced:Facility rdf:type owl:NamedIndividual ,
-                                       :EnergyPlusMeter ;
-                              <http://purl.org/dc/elements/1.1/creator> "hanli"^^xsd:string ;
-                              <http://purl.org/dc/elements/1.1/date> "2022-05-06T16:53:31Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#ElectricityPurchased:Facility
-:ElectricityPurchased:Facility rdf:type owl:NamedIndividual ,
-                                        :EnergyPlusMeter ;
-                               <http://purl.org/dc/elements/1.1/creator> "hanli"^^xsd:string ;
-                               <http://purl.org/dc/elements/1.1/date> "2022-05-06T16:53:08Z"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Exterior:FuelEquipment
-:Exterior:FuelEquipment rdf:type owl:NamedIndividual ,
-                                 :EnergyPlusObject ;
-                        rdfs:comment "Doc: https://bigladdersoftware.com/epx/docs/9-6/input-output-reference/group-exterior-energy-use-equipment.html#exteriorfuelequipment"^^xsd:string ;
-                        <http://www.w3.org/2004/02/skos/core#definition> "EnergyPlus object to model EV charging demand"^^xsd:string .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Exterior:Lights
-:Exterior:Lights rdf:type owl:NamedIndividual ,
-                          :EnergyPlusObject ;
-                 :hasScope :DeviceLevelApplication ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "Outdoor lighting object in EnergyPlus"^^xsd:string ;
-                 <http://www.w3.org/2004/02/skos/core#note> "Doc: https://bigladdersoftware.com/epx/docs/9-6/input-output-reference/group-exterior-energy-use-equipment.html#exteriorlights"^^xsd:string .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Gas:Facility
-:Gas:Facility rdf:type owl:NamedIndividual ,
-                       :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Generator:MicroCHP
-:Generator:MicroCHP rdf:type owl:NamedIndividual ,
-                             :EnergyPlusObject .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Generator:Photovoltaic
-:Generator:Photovoltaic rdf:type owl:NamedIndividual ,
-                                 :EnergyPlusObject ;
-                        <http://www.w3.org/2004/02/skos/core#note> "Doc: https://bigladdersoftware.com/epx/docs/9-6/input-output-reference/group-electric-load-center-generator.html#photovoltaic-generators"^^xsd:string .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Heating:Electricity
-:Heating:Electricity rdf:type owl:NamedIndividual ,
-                              :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#InteriorEquipment:Electricity
-:InteriorEquipment:Electricity rdf:type owl:NamedIndividual ,
-                                        :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#InteriorLights:Electricity
-:InteriorLights:Electricity rdf:type owl:NamedIndividual ,
-                                     :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#Pumps:Electricity
-:Pumps:Electricity rdf:type owl:NamedIndividual ,
-                            :EnergyPlusMeter .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#SetpointManager:Scheduled
-:SetpointManager:Scheduled rdf:type owl:NamedIndividual ,
-                                    :EnergyPlusObject ;
-                           <http://www.w3.org/2004/02/skos/core#note> """Doc: 
-https://bigladdersoftware.com/epx/docs/9-6/input-output-reference/group-setpoint-managers.html#setpointmanagerscheduled"""^^xsd:string .
-
-
-###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#ThermostatSetpoint:DualSetpoint
-:ThermostatSetpoint:DualSetpoint rdf:type owl:NamedIndividual ,
-                                          :EnergyPlusObject ;
-                                 <http://www.w3.org/2004/02/skos/core#note> "Doc: https://bigladdersoftware.com/epx/docs/9-6/input-output-reference/group-zone-controls-thermostats.html#zone-thermostat-setpoints"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
