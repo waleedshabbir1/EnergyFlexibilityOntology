@@ -75,6 +75,45 @@ A [list](https://www.w3.org/2001/sw/wiki/Tools) of publicly available Semantic W
 
 <hr>
 
+
+## Edited for Vocabulary Provider
+These individulas were deleted from the original file, 
+To re-integrate them the ":" needs to be removed 
+
+Cooling:Electricity
+
+Electricity:Facility
+
+Electricity:HVAC
+
+Exterior:FuelEquipment
+
+Exterior:Lights
+
+Gas:Facility
+
+Generator:MicroCHP
+
+Generator:Photovoltaic
+
+Heating:Electricity
+
+InteriorEquipment:Electricity
+
+InteriorLights:Electricity
+
+Pumps:Electricity
+
+SetpointManager:Scheduled
+
+ThermostatSetpoint:DualSetpoint
+
+ElectricityProduced:Facility
+
+ElectricityPurchased:Facility
+
+<hr>
+
 <!-- ## Contribute -->
 
 ## License
