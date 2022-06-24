@@ -180,7 +180,7 @@
 :hasUnitOfMeasure rdf:type owl:ObjectProperty ;
                   rdfs:domain :Variable ;
                   rdfs:range :UnitOfMeasure ;
-                  rdfs:comment "Describe the unit of a variable or a formula output."^^xsd:string .
+                  rdfs:comment "Describe the unit of a variable."^^xsd:string .
 
 
 ###  http://www.semanticweb.org/hlee9/ontologies/2021/4/EF-core#isCharacteristicOf
